@@ -23,12 +23,13 @@ async function loadScript() {
 }
 
 async function resolveScript() {
+  const url = `${config.scriptUrl}?cachebust=${new Date().getTime()}`;
   if (!config.encryptedScript) {
-    return await (await fetch(config.scriptUrl)).text();
+    return await (await fetch(url)).text();
   } else {
     const password = localStorage.getItem(config.passwordLocationInLocalStorage);
     if (await sha256(password) === config.sha256password) {
-      const encryptedBase64 = await (await fetch(config.scriptUrl)).text();
+      const encryptedBase64 = await (await fetch(url)).text();
       const passwordBytes = new TextEncoder().encode(password);
       const passwordKey = await importKey(passwordBytes);
       const encryptedBytes = base64decode(encryptedBase64);
