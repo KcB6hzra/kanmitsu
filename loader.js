@@ -7,7 +7,7 @@ const PRODUCTION_CONFIG = {
   encryptedScript: true,
   passwordLocationInLocalStorage: 'kanmitsu_password',
   sha256password: 'a30a0c22bf435c9d9bf1cd0a310df626810cf6159405009fcce9f1920dd44c9b',
-  scriptUrl: 'https://gist.githubusercontent.com/KcB6hzra/edd0df80bcaa64e3f8325e2f706a89dc/raw/71f4f4c79b1314c00f4070b901f7b0eeda658d73/test3.js',
+  scriptUrl: 'https://gist.githubusercontent.com/KcB6hzra/edd0df80bcaa64e3f8325e2f706a89dc/raw/200b79e9858cf40442a0eb8322f9eda2c9e0f928/test3.js',
 };
 
 const config = location.hostname === 'localhost' ? DEVELOPMENT_CONFIG : PRODUCTION_CONFIG;
